@@ -1,0 +1,15 @@
+// Possible cause: The registration logic does not check for existing registrations.
+// Example fix in pseudocode:
+
+function registerStudent(studentId, activityId) {
+	if (isAlreadyRegistered(studentId, activityId)) {
+		throw new Error('Student is already registered for this activity.');
+	}
+	// Proceed with registration
+	addRegistration(studentId, activityId);
+}
+
+function isAlreadyRegistered(studentId, activityId) {
+	// Check in the database or in-memory store if the student is already registered
+	// Return true if found, false otherwise
+}
